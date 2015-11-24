@@ -1,5 +1,7 @@
 # eLib
 
+[![Build Status](https://travis-ci.org/toshogakari/eLib.svg)](https://travis-ci.org/toshogakari/eLib)
+
 ## Installation
 
 ```bash
