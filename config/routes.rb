@@ -2,8 +2,14 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   mount LetterOpenerWeb::Engine, at: "/mail" if Rails.env.development?
   devise_for :users
-  # get 'test/index'
+
   root 'test#index'
+  resources :notes
+  resources :skills
+  resources :tags
+  resources :categories
+  resources :books
+  resources :jobs
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
