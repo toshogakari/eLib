@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
+  devise_for :users
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
+  root 'test#index'
   resources :notes
   resources :skills
   resources :tags
   resources :categories
   resources :books
   resources :jobs
-  devise_for :users
-  # get 'test/index'
-  root 'test#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
