@@ -1,20 +1,4 @@
 <h1>(´・ω・`)＜ヘロー</h1>
-
-<h2>開発者用ページ</h2>
-<table class="table table-hover">
-  <tr>
-    <th>内容</th>
-    <th>詳細</th>
-    <th>URL</th>
-  </tr>
-  <tr>
-    <th>mail</th>
-    <th>ユーザー作成時、mailを確認するページ</th>
-    <th><a href="http://localhost:3000/mail">http://localhost:3000/mail</a></th>
-  </tr>
-  <tr>
-    <th>admin</th>
-    <th>Userテーブルのadmin=true時、アクセスできる</th>
-    <th><a href="http://localhost:3000/admin">http://localhost:3000/admin</a></th>
-  </tr>
-</table>
+<% if Rails.env == 'development' %>
+<%= render 'layouts/admin' %>
+<% end %>
