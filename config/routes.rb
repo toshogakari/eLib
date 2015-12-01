@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :notes
+  resources :skills
+  resources :tags
+  resources :categories
+  resources :books
+  resources :jobs
   devise_for :users
   # get 'test/index'
   root 'test#index'
