@@ -18,3 +18,6 @@
 ## URL
 
 https://engineer-library.herokuapp.com/
+
+## ER Diagrams
+https://raw.githubusercontent.com/toshogakari/eLib/master/erd.pdf
