@@ -88,6 +88,10 @@ group :development do
 
   # generate ER
   gem 'rails-erd'
+
+  # send mailer
+  gem 'letter_opener_web'
+
 end
 
 # codeclimate

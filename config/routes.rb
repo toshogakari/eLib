@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  mount LetterOpenerWeb::Engine, at: "/mail" if Rails.env.development?
   devise_for :users
   # get 'test/index'
   root 'test#index'
