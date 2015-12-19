@@ -90,7 +90,7 @@ group :development do
   gem 'rails-erd'
 
   # send mailer
-  gem 'letter_opener_web'
+  # gem 'letter_opener_web'
 
 end
 
