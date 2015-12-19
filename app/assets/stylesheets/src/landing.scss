@@ -2,13 +2,21 @@
 
 #landing {
   .article-item {
-    padding: 10px 0;
+    padding: 20px 0;
     border-bottom: 1px solid $skeleton-black-color;
     .image {
-      border: 1px solid $skeleton-black-color;
+      img:hover {
+        opacity: 0.8;
+      }
     }
-    .description {
-      padding-top: 1em;
+    .summary {
+      padding: 10px 1em;
+      .content {
+        height: 100px;
+      }
+      .action {
+        height: 20px;
+      }
     }
   }
 }

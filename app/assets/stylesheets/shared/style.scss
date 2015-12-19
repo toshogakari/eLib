@@ -8,35 +8,31 @@ body {
   background-color: $white-color;
 }
 
-h1,
-.h1 {
+h1, .h1 {
   font-size: 40px;
 }
-h2,
-.h2 {
+h2, .h2 {
   font-size: 30px;
 }
-h3,
-.h3 {
+h3, .h3 {
   font-size: 25px;
 }
-h4,
-.h4 {
+h4, .h4 {
   font-size: 20px;
 }
-h5,
-.h5 {
+h5, .h5 {
   font-size: 17px;
 }
-h6,
-.h6 {
+h6, .h6 {
   font-size: 15px;
 }
+
 p {
   font-size: 15px;
   line-height: 1.4em;
   margin: 0;
 }
-small {
 
+small {
+  line-height: 1em;
 }

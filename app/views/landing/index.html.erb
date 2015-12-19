@@ -13,15 +13,21 @@
     <div class="col-md-9">
       <% @books.each do |book| %>
       <article class="row article-item">
-        <div class="col-md-2 image">
-          <%= image_tag(book.pc_image_url, {:class => 'img-responsive'}) %>
-        </div>
-        <div class="col-md-10 description">
-          <p><strong><%= book.title %></strong></p>
-          <p><small><%= book.description.truncate(100) %></small></p>
-          <button class="btn btn-sm btn-embossed btn-primary">
-            <%= t('view.library.put') %>
-          </button>
+        <div class="inner">
+          <div class="col-md-2 image">
+            <%= link_to image_tag(book.pc_image_url, {:class => 'img-responsive'}), book %>
+          </div>
+          <div class="col-md-10 summary">
+            <section class="content">
+              <p><strong><%= book.title %></strong></p>
+              <p><small><%= book.description.truncate(100) %></small></p>
+            </section>
+            <section class="action">
+              <button class="btn btn-sm btn-embossed btn-primary">
+                <%= t('view.library.put') %>
+              </button>
+            </section>
+          </div>
         </div>
       </article>
       <% end %>
