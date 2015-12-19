@@ -28,6 +28,6 @@ books.each do |book|
       description: book['description'],
     pc_image_url: book['pc_image_url'],
     mb_image_url: book['mb_image_url'],
-    category_id: random.rand(1 ... categories.length).to_i
+    category_id: random.rand(1 ... categories.length)
   )
 end
