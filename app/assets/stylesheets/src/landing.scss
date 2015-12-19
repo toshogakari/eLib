@@ -1,0 +1,14 @@
+@import "./../shared/mixin";
+
+#landing {
+  .article-item {
+    padding: 10px 0;
+    border-bottom: 1px solid $skeleton-black-color;
+    .image {
+      border: 1px solid $skeleton-black-color;
+    }
+    .description {
+      padding-top: 1em;
+    }
+  }
+}

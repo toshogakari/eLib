@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/mail" if Rails.env.development?
   devise_for :users
 
-  root 'test#index'
+  root 'landing#index'
   resources :notes
   resources :skills
   resources :tags

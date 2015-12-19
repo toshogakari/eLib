@@ -20,6 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ja:
+  app_name: "eLib"
+  view:
+    library:
+      put: '蔵書に入れる'
+      note: 'ノート'
+      concern: '気になる!'
   date:
     abbr_day_names:
     - 日
