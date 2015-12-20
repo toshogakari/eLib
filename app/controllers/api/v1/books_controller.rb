@@ -1,6 +1,6 @@
 class Api::V1::BooksController < Api::V1::BaseController
 
-  #POST api/books/search/:page
+  #POST api/books/search
   def search
     page = params[:page].blank? ? 1 : params[:page]
     @books = Book.includes(:tags)
@@ -9,7 +9,9 @@ class Api::V1::BooksController < Api::V1::BaseController
          [:title, 'LIKE'],
          [:category_id],
          [:tag_id]
-     ]).page(page).per(100)
+     ])
+     .page(page)
+     .per(100)
   end
 
 end

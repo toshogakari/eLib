@@ -14,10 +14,10 @@ Rails.application.routes.draw do
   resources :jobs
 
   # API
-  namespace :api, constraints: { format: :json } do
+  namespace :api, constraints: {format: :json} do
     # Version 1
     namespace :v1 do
-      get 'books/search'
+      post 'books/search'
     end
   end
 

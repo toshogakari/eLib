@@ -6,13 +6,13 @@ module Searchable
 
     OPERATORS = {
         'LIKE' => :matches,
-        '=' => :eq,
-        '>' => :gt,
-        '<' => :lt
+        '='    => :eq,
+        '>'    => :gt,
+        '<'    => :lt
     }
 
     FILTERS = {
-        :matches => lambda{|s| '%' << s << '%'}
+        matches: lambda{|s| '%' << s << '%'}
     }
 
     # search
@@ -22,7 +22,7 @@ module Searchable
     # XXX.search(params, queries)
     # => SELECT * FROM "XXX" WHERE ("books"."title" LIKE '%PHP%')
     def self.search(params, queries)
-      if params.nil? or queries.nil?
+      if params.blank? or queries.blank?
         return self.all
       end
       arel = self.arel_table
