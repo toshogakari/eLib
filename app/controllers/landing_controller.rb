@@ -3,7 +3,7 @@ class LandingController < ApplicationController
 
   # GET /
   def index
-    @books = Book.limit(50)
+    @books = Book.limit(60)
     @categories = Category.all
   end
 

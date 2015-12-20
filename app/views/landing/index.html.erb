@@ -1,36 +1,31 @@
-<!-- hero -->
 <div class="container-fluid">
-
-</div>
-
-<div class="container">
   <div class="row">
-    <div class="col-md-3">
-      <% @categories.each do |category| %>
-      <p><%= category.name %></p>
-      <% end %>
-    </div>
-    <div class="col-md-9">
-      <% @books.each do |book| %>
-      <article class="row article-item">
-        <div class="inner">
-          <div class="col-md-2 image">
-            <%= link_to image_tag(book.pc_image_url, {:class => 'img-responsive'}), book %>
-          </div>
-          <div class="col-md-10 summary">
-            <section class="content">
-              <p><strong><%= book.title %></strong></p>
-              <p><small><%= book.description.truncate(100) %></small></p>
-            </section>
-            <section class="action">
-              <button class="btn btn-sm btn-embossed btn-primary">
-                <%= t('view.library.put') %>
-              </button>
-            </section>
-          </div>
-        </div>
-      </article>
-      <% end %>
+    <div class="col-md-12">
+      <div class="row">
+        <% @books.each do |book| %>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="row article-item">
+                <div class="col-sm-3 image">
+                  <%= link_to image_tag(book.pc_image_url), book %>
+                </div>
+                <div class="col-sm-9 summary">
+                  <section class="content">
+                    <p><strong><%= book.title %></strong></p>
+                  </section>
+                  <section class="action">
+                    <button class="btn btn-xs btn-embossed btn-primary">
+                      <%= t('view.library.put') %>
+                    </button>
+                    &nbsp;
+                    <button class="btn btn-xs btn-embossed btn-info">
+                      <%= t('view.library.note') %>
+                    </button>
+                  </section>
+                </div>
+              </div>
+            </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

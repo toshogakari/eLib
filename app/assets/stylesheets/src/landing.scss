@@ -2,17 +2,23 @@
 
 #landing {
   .article-item {
-    padding: 20px 0;
+    padding: 40px 0;
     border-bottom: 1px solid $skeleton-black-color;
     .image {
+      img {
+        width:auto;
+        height:auto;
+        max-width:120px;
+        max-height:100px;
+      }
       img:hover {
         opacity: 0.8;
       }
     }
     .summary {
-      padding: 10px 1em;
+      padding-top: 0.5em;
       .content {
-        height: 100px;
+        height: 70px;
       }
       .action {
         height: 20px;

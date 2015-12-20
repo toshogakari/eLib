@@ -227,3 +227,5 @@ en:
   view:
     library:
       put: "Put in library"
+      note: ""
+      concern: ""
