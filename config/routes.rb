@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # mount LetterOpenerWeb::Engine, at: "/mail" if Rails.env.development?
-  devise_for :users
+  devise_for :users, controllers: {
+      # confirmations: 'users/confirmations', # email confirm
+      # omniauth_callbacks: 'users/omniauth_callbacks', # omniauth
+      # passwords: 'users/passwords', # change passwords
+      registrations: 'users/registrations'#, # sign up
+      # sessions: 'users/sessions', # sign in
+      # unlocks: 'users/unlocks' # reset passwords
+    }
+  end
 
   root 'test#index'
   resources :notes
