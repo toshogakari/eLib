@@ -1,0 +1,33 @@
+@import "mixin";
+
+// logo
+img.logo {
+  &.nav {
+    width: 58px;
+    height: 22px;
+  }
+}
+
+// navigation
+.navbar {
+  border-radius: 0;
+}
+.navbar-default {
+  color: $white-color;
+  background: $nav-background-color;
+  border: none;
+  .navbar-brand {
+    color: $white-color;
+  }
+  .navbar-nav {
+    li > a.dropdown-toggle {
+        color: $white-color;
+    }
+    li > a.dropdown-toggle:hover,
+    .open a.dropdown-toggle,
+    .open a.dorpdown-toggle:hover {
+      color: $white-color;
+      background: $skeleton-black-color;
+    }
+  }
+}

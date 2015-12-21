@@ -7,26 +7,17 @@
   <!-- CDN installation -->
   <%= javascript_include_tag "//code.jquery.com/jquery-2.1.4.min.js" %>
   <%= javascript_include_tag "//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" %>
+  <%= javascript_include_tag "//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" %>
   <%= stylesheet_link_tag "//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" %>
+  <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/flat-ui/2.2.2/css/flat-ui.css" %>
   <!-- Rails Default settings -->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body id="<%= "#{controller.controller_name}" %>">
-  <%= render 'shared/header' %>
-  <%= render 'shared/nav' %>
-  <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
-  <% end %>
-  <article>
-  <div class="container">
-    <%= yield %>
-  </div>
-  </article>
-  <%= render 'shared/footer' %>
+<%= render 'shared/nav' %>
+<%= yield %>
+<%= render 'shared/footer' %>
 </body>
 </html>
