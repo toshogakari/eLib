@@ -41,6 +41,10 @@ gem 'devise'
 # gem 'omniauth-github'
 gem 'rails_admin'
 
+# react
+gem 'browserify-rails'
+gem 'react-rails'
+
 # pagination
 gem 'kaminari', '~> 0.16.3'
 gem 'api-pagination', '~> 4.1', '>= 4.1.1'
