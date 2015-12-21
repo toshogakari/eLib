@@ -2,6 +2,9 @@ language: ruby
 rvm:
 - 2.2.3
 bundler_args: "--without development production"
+before_script:
+- nvm install 4.2.3
+- npm install
 before_install:
 - gem update --system
 - gem --version

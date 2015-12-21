@@ -36,5 +36,6 @@ module ELib
 
     # seting br
     config.browserify_rails.commandline_options = '-t babelify'
+
   end
 end
