@@ -13,6 +13,7 @@
   $ cd eLib
   $ bundle install --without production
   $ bundle exec rake db:migrate
+  $ bundle exec rake db:seed
 ```
 
 ## URL
