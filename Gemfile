@@ -51,6 +51,7 @@ group :development do
   gem 'meta_request', '~> 0.4.0'
   gem 'rails-erd', '~> 1.4.7'
   gem 'letter_opener_web', '~> 1.3.0'
+  gem 'redis-browser', '~> 0.3.3'
 end
 
 group :test do
