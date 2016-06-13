@@ -1,112 +1,64 @@
 source 'https://rubygems.org'
 
+ruby '2.3.1'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
-# Use sqlite3 as the database for Active Record
-# gem 'sqlite3'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
+gem 'sass-rails', '~> 5.0.4'
+gem 'uglifier', '~> 3.0.0', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
+gem 'jquery-rails', '~> 4.1.1'
+gem 'turbolinks', '~> 2.5.3'
+gem 'jbuilder', '~> 2.5.0'
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'httpclient', '~> 2.8.0'
+gem 'devise', '~> 4.1.1'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use http Clients
-gem 'httpclient'
-
-# login settings
-gem 'devise'
-# gem 'devise-i18n'
-# gem 'omniauth'
-# gem 'omniauth-facebook'
-# gem 'omniauth-github'
-gem 'rails_admin'
-
-# pagination
+gem 'rails_admin', '~> 0.8.1'
 gem 'kaminari', '~> 0.16.3'
 gem 'api-pagination', '~> 4.1', '>= 4.1.1'
+gem 'redis', '~> 3.3.0', require: ['redis', 'redis/connection/hiredis']
+gem 'hiredis', '~> 0.6.1'
+gem 'readthis', '~> 1.3.0'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
-
-  # BDD
-  gem 'rspec-rails'
-  gem 'spring-commands-rspec'
-  gem 'shoulda-matchers', require: false
-  gem 'database_cleaner'
-  gem 'factory_girl_rails'
-  # gem 'capybara'
-  # gem 'cucumber-rails', :require => false
+  gem 'byebug', '~> 9.0.5'
+  gem 'sqlite3', '~> 1.3.11'
+  gem 'rspec-rails', '~> 3.4.2'
+  gem 'spring-commands-rspec', '~> 1.0.4'
+  gem 'shoulda-matchers', '~> 3.1.1'
+  gem 'database_cleaner', '~> 1.5.3'
+  gem 'factory_girl_rails', '~> 4.7.0'
+  gem 'capybara', '~> 2.7.1'
+  gem 'fuubar', '~> 2.0.0'
+  gem 'ffaker', '~> 2.2.0'
+  gem 'poltergeist', '~> 1.9.0'
+  gem 'launchy', '~> 2.4.3'
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-
-  # See https://github.com/rails/execjs#readme for more supported runtimes
-  # gem 'therubyracer', platforms: :ruby
-
-  # Debugger
-  gem 'pry'
-  gem 'pry-rails'
-  gem 'pry-byebug'
-  gem 'pry-stack_explorer'
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'hirb'
-  gem 'hirb-unicode'
-
-  # guard gems
-  gem 'guard-rspec'
-  gem 'guard-livereload'
-  gem 'rb-fsevent'
-
-  # chrome addon
-  gem 'meta_request'
-
-  # generate ER
-  gem 'rails-erd'
-
-  # send mailer
-  gem 'letter_opener_web'
-
+  gem 'spring', '~> 1.7.1'
+  gem 'pry', '~> 0.10.3'
+  gem 'pry-rails', '~> 0.3.4'
+  gem 'pry-byebug', '~> 3.4.0'
+  gem 'pry-stack_explorer', '~> 0.4.9.2'
+  gem 'better_errors', '~> 2.1.1'
+  gem 'binding_of_caller', '~> 0.7.2'
+  gem 'guard-rspec', '~> 4.7.2'
+  gem 'guard-livereload', '~> 2.5.2'
+  gem 'rb-fsevent', '~> 0.9.7'
+  gem 'meta_request', '~> 0.4.0'
+  gem 'rails-erd', '~> 1.4.7'
+  gem 'letter_opener_web', '~> 1.3.0'
 end
 
-# codeclimate
 group :test do
-  gem "codeclimate-test-reporter", require: nil
+  gem 'coveralls', '~> 0.8.13', require: false
 end
 
-# heroku settings
 group :production do
-  gem 'rails_12factor'
-  gem 'pg'
-  gem 'unicorn'
-  gem 'newrelic_rpm'
+  gem 'rails_12factor', '~> 0.0.3'
+  gem 'pg', '~> 0.18.4'
+  gem 'unicorn', '~> 5.1.0'
+  gem 'newrelic_rpm', '~> 3.15.2'
 end
