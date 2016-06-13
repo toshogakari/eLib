@@ -61,6 +61,7 @@ end
 group :production do
   gem 'rails_12factor', '~> 0.0.3'
   gem 'pg', '~> 0.18.4'
+  # gem 'pg_power'
   gem 'unicorn', '~> 5.1.0'
   gem 'newrelic_rpm', '~> 3.15.2'
 end
