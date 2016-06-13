@@ -14,6 +14,8 @@ gem 'redis', '~> 3.3.0', require: ['redis', 'redis/connection/hiredis']
 gem 'hiredis', '~> 0.6.1'
 gem 'readthis', '~> 1.3.0'
 
+gem 'dalli' # memcached client
+
 gem 'httpclient', '~> 2.8.0'
 gem 'devise', '~> 4.1.1'
 
