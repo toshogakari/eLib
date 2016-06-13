@@ -10,19 +10,20 @@ gem 'jquery-rails', '~> 4.1.1'
 gem 'turbolinks', '~> 2.5.3'
 gem 'jbuilder', '~> 2.5.0'
 
+gem 'redis', '~> 3.3.0', require: ['redis', 'redis/connection/hiredis']
+gem 'hiredis', '~> 0.6.1'
+gem 'readthis', '~> 1.3.0'
+
 gem 'httpclient', '~> 2.8.0'
 gem 'devise', '~> 4.1.1'
 
 gem 'rails_admin', '~> 0.8.1'
 gem 'kaminari', '~> 0.16.3'
 gem 'api-pagination', '~> 4.1', '>= 4.1.1'
-gem 'redis', '~> 3.3.0', require: ['redis', 'redis/connection/hiredis']
-gem 'hiredis', '~> 0.6.1'
-gem 'readthis', '~> 1.3.0'
 
 group :development, :test do
-  gem 'byebug', '~> 9.0.5'
   gem 'sqlite3', '~> 1.3.11'
+  gem 'byebug', '~> 9.0.5'
   gem 'rspec-rails', '~> 3.4.2'
   gem 'spring-commands-rspec', '~> 1.0.4'
   gem 'shoulda-matchers', '~> 3.1.1'
