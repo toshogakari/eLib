@@ -9,12 +9,28 @@
 ## Installation
 
 ```bash
-  $ git clone git@github.com:toshogakari/eLib.git
-  $ cd eLib
-  $ bundle install --without production
-  $ bundle exec rake db:migrate
-  $ bundle exec rake db:seed
+$ git clone git@github.com:toshogakari/eLib.git
+$ cd eLib
+$ bundle install --without production
+$ bundle exec rake db:migrate
+$ bundle exec rake db:seed
 ```
+
+## docker(experimental)
+
+on local
+
+```bash
+$ docker build -t elib .
+$ docker run -it --rm -p 3000:3000 elib
+```
+
+<!-- on cloud
+
+```bash
+$ docker build -t elib .
+$ docker run -it --rm -p 3000:3000 elib
+``` -->
 
 ## URL
 
