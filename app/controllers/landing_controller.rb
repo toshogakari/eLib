@@ -5,6 +5,7 @@ class LandingController < ApplicationController
   def index
     @books = Book.limit(60)
     @categories = Category.all
+    @user = { name: 'test' }
   end
 
 end
