@@ -1,0 +1,39 @@
+<div class="sidebar-wrapper">
+  <div class="row">
+    <div class="col-md-12">
+      <div style="border-top: 1px solid rgba(0,0,0,0.1);border-bottom: 1px solid rgba(0,0,0,0.1);padding:10px;">
+        キーワードから探す
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 5px; margin-bottom: 10px;">
+    <div class="col-md-12">
+      <div style="padding:10px;text-align:center">
+        <input type="text" style="border-width:1px;" class="input-sm form-control" name="" id="" placeholder="Ruby on rails">
+        <button style="margin-top:10px;" class="btn btn-sm btn-inverse">検索する</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div style="border-top: 1px solid rgba(0,0,0,0.1);border-bottom: 1px solid rgba(0,0,0,0.1);padding:10px;">
+        カテゴリから探す
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top:10px;">
+    <div class="col-md-12">
+      <% @categories.each_with_index do |category, i| %>
+          <div class="row" style="padding-left: 5px;margin-bottom:5px;">
+            <div class="col-md-4 switch-base">
+              <input id="cmn-toggle-<%= i %>" class="cmn-toggle cmn-toggle-round-flat" type="checkbox">
+              <label for="cmn-toggle-<%= i %>"></label>
+            </div>
+            <div class="col-md-8 switch-note">
+              <strong><%= category.name %></strong>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
