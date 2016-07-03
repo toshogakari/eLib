@@ -2,6 +2,9 @@ language: ruby
 rvm:
 - 2.2.3
 bundler_args: "--without development production"
+before_script:
+- nvm install 6.2.2
+- npm install
 before_install:
 - gem update --system
 - gem --version
@@ -21,3 +24,4 @@ deploy:
     branch: master
   run:
   - rake db:migrate
+  - rake db:seed
