@@ -34,6 +34,8 @@ gem 'react-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Database is postgreSQL
+gem 'pg'
 # Use http Clients
 gem 'httpclient'
 
@@ -52,9 +54,6 @@ gem 'api-pagination', '~> 4.1', '>= 4.1.1'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
 
   # BDD
   gem 'rspec-rails'
@@ -110,7 +109,6 @@ end
 # heroku settings
 group :production do
   gem 'rails_12factor'
-  gem 'pg'
   gem 'unicorn'
   gem 'newrelic_rpm'
 end
