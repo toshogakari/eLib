@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20151201131622) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "book_cases", force: :cascade do |t|
     t.integer  "evaluation", default: 0, null: false
     t.integer  "level",      default: 0, null: false
@@ -22,8 +25,8 @@ ActiveRecord::Schema.define(version: 20151201131622) do
     t.datetime "updated_at",             null: false
   end
 
-  add_index "book_cases", ["book_id"], name: "index_book_cases_on_book_id"
-  add_index "book_cases", ["user_id"], name: "index_book_cases_on_user_id"
+  add_index "book_cases", ["book_id"], name: "index_book_cases_on_book_id", using: :btree
+  add_index "book_cases", ["user_id"], name: "index_book_cases_on_user_id", using: :btree
 
   create_table "books", force: :cascade do |t|
     t.string   "isbn",         limit: 13,  default: "0", null: false
@@ -36,7 +39,7 @@ ActiveRecord::Schema.define(version: 20151201131622) do
     t.datetime "updated_at",                             null: false
   end
 
-  add_index "books", ["category_id"], name: "index_books_on_category_id"
+  add_index "books", ["category_id"], name: "index_books_on_category_id", using: :btree
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 45, default: "", null: false
@@ -57,7 +60,7 @@ ActiveRecord::Schema.define(version: 20151201131622) do
     t.datetime "updated_at",                null: false
   end
 
-  add_index "notes", ["book_case_id"], name: "index_notes_on_book_case_id"
+  add_index "notes", ["book_case_id"], name: "index_notes_on_book_case_id", using: :btree
 
   create_table "skills", force: :cascade do |t|
     t.string   "name",       limit: 45, default: "", null: false
@@ -72,8 +75,8 @@ ActiveRecord::Schema.define(version: 20151201131622) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "tag_has_books", ["book_id"], name: "index_tag_has_books_on_book_id"
-  add_index "tag_has_books", ["tag_id"], name: "index_tag_has_books_on_tag_id"
+  add_index "tag_has_books", ["book_id"], name: "index_tag_has_books_on_book_id", using: :btree
+  add_index "tag_has_books", ["tag_id"], name: "index_tag_has_books_on_tag_id", using: :btree
 
   create_table "tags", force: :cascade do |t|
     t.string   "name",       limit: 45, default: "", null: false
@@ -88,8 +91,8 @@ ActiveRecord::Schema.define(version: 20151201131622) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "user_has_skills", ["skill_id"], name: "index_user_has_skills_on_skill_id"
-  add_index "user_has_skills", ["user_id"], name: "index_user_has_skills_on_user_id"
+  add_index "user_has_skills", ["skill_id"], name: "index_user_has_skills_on_skill_id", using: :btree
+  add_index "user_has_skills", ["user_id"], name: "index_user_has_skills_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -115,8 +118,17 @@ ActiveRecord::Schema.define(version: 20151201131622) do
     t.string   "unconfirmed_email"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["job_id"], name: "index_users_on_job_id"
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["job_id"], name: "index_users_on_job_id", using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "book_cases", "books"
+  add_foreign_key "book_cases", "users"
+  add_foreign_key "books", "categories"
+  add_foreign_key "notes", "book_cases"
+  add_foreign_key "tag_has_books", "books"
+  add_foreign_key "tag_has_books", "tags"
+  add_foreign_key "user_has_skills", "skills"
+  add_foreign_key "user_has_skills", "users"
+  add_foreign_key "users", "jobs"
 end
